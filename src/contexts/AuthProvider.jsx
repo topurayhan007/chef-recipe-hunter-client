@@ -33,10 +33,17 @@ const AuthProvider = ({ children }) => {
     });
   };
 
+  const signIn = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
   const authInfo = {
     user,
     createUser,
     updateUserInfo,
+    signIn,
+    loading,
   };
 
   return (

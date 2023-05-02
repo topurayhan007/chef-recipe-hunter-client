@@ -1,12 +1,57 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import React, { useContext } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log("login page location", location);
+
+  const from = location.state?.from?.pathname || "/";
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    if (password.length < 6) {
+      toast("Password should be at least 6 characters", {
+        position: "top-center",
+        type: "error",
+      });
+      return;
+    }
+
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        toast("Logged in successfully!", {
+          position: "top-center",
+          type: "success",
+        });
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error.message);
+        toast(error.message, {
+          position: "top-center",
+          type: "error",
+        });
+      });
+  };
+
   return (
     <div className="card flex-shrink-0 w-full max-w-sm mx-auto mt-16 shadow-2xl bg-base-100">
-      <form className="card-body">
+      <form onSubmit={handleLogin} className="card-body">
         <p className="text-3xl font-bold text-center">Login</p>
         <div className="form-control">
           <label className="label">
@@ -41,7 +86,10 @@ const Login = () => {
           </label>
         </div>
         <div className="form-control mt-2">
-          <button className="btn hover:bg-amber-400 bg-[#ffc919] text-black font-bold px-6 normal-case text-lg border-0">
+          <button
+            type="submit"
+            className="btn hover:bg-amber-400 bg-[#ffc919] text-black font-bold px-6 normal-case text-lg border-0"
+          >
             Login
           </button>
         </div>
