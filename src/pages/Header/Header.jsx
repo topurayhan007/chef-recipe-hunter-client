@@ -1,10 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import ActiveLink from "../ActiveLink/ActiveLink";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [showName, setShowName] = useState(false);
+
   return (
     <div className="bg-[#001019]">
       <div className="navbar bg-transparent text-white lg:w-[1320px] mx-auto py-3">
@@ -61,19 +63,27 @@ const Header = () => {
             </button>
           </Link>
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <label
+              tabIndex={0}
+              onMouseEnter={() => setShowName(true)}
+              onClick={() => setShowName(!showName)}
+              className="btn btn-ghost btn-circle avatar"
+            >
               <div className="w-10 rounded-full">
                 <img src="assets/icons/profile-icon.png" />
               </div>
             </label>
             <ul
               tabIndex={0}
-              className="mt-3 p-2 shadow menu menu-compact font-semibold dropdown-content text-black bg-base-100 rounded-box w-52"
+              onMouseLeave={() => setShowName(false)}
+              className={`mt-3 p-2 shadow menu menu-compact font-semibold ${
+                showName ? "absolute z-50 right-0" : "hidden"
+              }  text-black bg-base-100 rounded-box w-52`}
             >
-              <li>
+              <li onClick={() => setShowName(false)}>
                 <a className="justify-between">Profile</a>
               </li>
-              <li className="text-red-600">
+              <li onClick={() => setShowName(false)} className="text-red-600">
                 <a>Logout</a>
               </li>
             </ul>
