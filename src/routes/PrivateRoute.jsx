@@ -12,10 +12,12 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div
-        className="radial-progress animate-spin"
-        style={{ "--value": 70 }}
-      ></div>
+      <div className="flex justify-center items-center h-screen">
+        <div
+          className="radial-progress text-warning animate-spin"
+          style={{ "--value": 70 }}
+        ></div>
+      </div>
     );
   }
   if (user) {

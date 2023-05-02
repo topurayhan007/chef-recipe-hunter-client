@@ -7,6 +7,7 @@ import Register from "../pages/Logins/Register/Register";
 import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Homepage/Home/Home";
 import RegisterLayout from "../layout/RegisterLayout";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Blog></Blog>,
+        element: (
+          <PrivateRoute>
+            <Blog></Blog>
+          </PrivateRoute>
+        ),
       },
     ],
   },
