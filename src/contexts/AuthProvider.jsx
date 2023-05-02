@@ -38,12 +38,18 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  const logOut = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
+
   const authInfo = {
     user,
     createUser,
     updateUserInfo,
     signIn,
     loading,
+    logOut,
   };
 
   return (
