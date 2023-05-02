@@ -43,10 +43,15 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error.message);
-        toast(error.message, {
-          position: "top-center",
-          type: "error",
-        });
+        if (
+          error.message === "Firebase: Error (auth/user-not-found)." ||
+          error.message === "Firebase: Error (auth/wrong-password)."
+        ) {
+          toast("Email/Password doesn't match", {
+            position: "top-center",
+            type: "error",
+          });
+        }
       });
   };
 
