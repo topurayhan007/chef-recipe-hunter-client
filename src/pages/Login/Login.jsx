@@ -7,6 +7,7 @@ const Login = () => {
   return (
     <div className="card flex-shrink-0 w-full max-w-sm mx-auto mt-16 shadow-2xl bg-base-100">
       <form className="card-body">
+        <p className="text-3xl font-bold text-center">Login</p>
         <div className="form-control">
           <label className="label">
             <span className="label-text text-base font-semibold">Email</span>
@@ -62,7 +63,7 @@ const Login = () => {
           </div>
         </div>
 
-        <label className="label mt-2">
+        <p className="mt-2 text-center">
           <span className="label-text text-base font-semibold">
             Don't Have and account?
             <Link
@@ -72,7 +73,7 @@ const Login = () => {
               Register Now!
             </Link>
           </span>
-        </label>
+        </p>
       </form>
     </div>
   );

@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const RegisterLayout = () => {
   return (
-    <div>
+    <div className="min-h-screen">
       <Header></Header>
       <Outlet></Outlet>
     </div>

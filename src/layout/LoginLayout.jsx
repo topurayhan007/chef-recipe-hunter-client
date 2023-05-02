@@ -5,7 +5,7 @@ import Footer from "../pages/Footer/Footer";
 
 const LoginLayout = () => {
   return (
-    <div className="h-screen">
+    <div className="min-h-screen">
       <Header></Header>
       <Outlet></Outlet>
     </div>
