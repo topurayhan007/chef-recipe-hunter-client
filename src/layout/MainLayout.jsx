@@ -1,16 +1,16 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import Header from "../pages/Header/Header";
 import { Outlet } from "react-router-dom";
 import Footer from "../pages/Footer/Footer";
-import Banner from "../pages/Banner/Banner";
 
-const Main = () => {
+const MainLayout = () => {
   return (
     <div>
-      <Banner></Banner>
+      <Header></Header>
+      <Outlet></Outlet>
+      <Footer></Footer>
     </div>
   );
 };
 
-export default Main;
+export default MainLayout;

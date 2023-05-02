@@ -1,15 +1,14 @@
 import React from "react";
 import Header from "../pages/Header/Header";
 import { Outlet } from "react-router-dom";
-import Footer from "../pages/Footer/Footer";
 
-const LoginLayout = () => {
+const RegisterLayout = () => {
   return (
-    <div className="h-screen">
+    <div>
       <Header></Header>
       <Outlet></Outlet>
     </div>
   );
 };
 
-export default LoginLayout;
+export default RegisterLayout;
