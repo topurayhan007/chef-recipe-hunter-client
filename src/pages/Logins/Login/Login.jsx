@@ -7,7 +7,8 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -51,6 +52,16 @@ const Login = () => {
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+  const handleGithubSignIn = () => {
+    signInWithGithub()
       .then((result) => {
         console.log(result.user);
         navigate(from, { replace: true });
@@ -123,7 +134,10 @@ const Login = () => {
             >
               <FaGoogle className="me-2" /> Google
             </button>
-            <button className="btn hover:bg-amber-300 bg-transparent border-[#ffc919] border-2 text-black font-bold px-8 normal-case text-base">
+            <button
+              onClick={handleGithubSignIn}
+              className="btn hover:bg-amber-300 bg-transparent border-[#ffc919] border-2 text-black font-bold px-8 normal-case text-base"
+            >
               <FaGithub className="me-2" /> GitHub
             </button>
           </div>

@@ -105,7 +105,7 @@ const Header = () => {
               >
                 <li onClick={() => setShowName(false)}>
                   <a className="justify-between">
-                    {user ? user?.displayName : "Name"}
+                    {user?.displayName !== null ? user?.displayName : "Name"}
                   </a>
                 </li>
                 <li onClick={handleLogOut} className="text-red-600">
