@@ -8,8 +8,8 @@ const ActiveLink = ({ to, children }) => {
       to={to}
       className={({ isActive }) =>
         isActive
-          ? "text-transparent bg-clip-text bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"
-          : "text-black"
+          ? "text-transparent bg-clip-text bg-gradient-to-r from-[#f6D365] to-yellow-500 font-extrabold"
+          : "text-white"
       }
     >
       {children}
