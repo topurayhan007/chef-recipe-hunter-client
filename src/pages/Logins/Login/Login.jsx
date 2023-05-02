@@ -54,6 +54,10 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        toast("Logged in successfully!", {
+          position: "top-center",
+          type: "success",
+        });
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -64,6 +68,10 @@ const Login = () => {
     signInWithGithub()
       .then((result) => {
         console.log(result.user);
+        toast("Logged in successfully!", {
+          position: "top-center",
+          type: "success",
+        });
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -73,8 +81,8 @@ const Login = () => {
 
   return (
     <div className="card flex-shrink-0 w-full max-w-sm mx-auto mt-16 shadow-2xl bg-base-100">
-      <div className="card-body">
-        <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin}>
+        <div className="card-body pb-5">
           <p className="text-3xl font-bold text-center">Login</p>
           <div className="form-control">
             <label className="label">
@@ -118,9 +126,11 @@ const Login = () => {
               Login
             </button>
           </div>
-        </form>
+        </div>
+      </form>
 
-        <div className="flex items-center mt-2">
+      <div className="px-8 pt-0 mt-0 pb-8 flex flex-col gap-2">
+        <div className="flex items-center">
           <hr className="flex-1 border-gray-300 border-[1px]" />
           <div className="mx-4 label-text text-base font-medium">Or</div>
           <hr className="flex-1 border-gray-300 border-[1px]" />

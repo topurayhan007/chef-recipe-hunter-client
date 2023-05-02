@@ -59,7 +59,16 @@ const Header = () => {
             </ul>
           </div>
           <Link to="/">
-            <h4 className="cursor-pointer font-bold text-2xl">Chef's Den</h4>
+            <h4 className="cursor-pointer font-bold text-2xl flex items-center font-[Lobster] tracking-wider">
+              <span>
+                <img
+                  src="assets/icons/logo-1.png"
+                  className="w-10 font-bold"
+                  alt=""
+                />
+              </span>{" "}
+              Chef's Den
+            </h4>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
