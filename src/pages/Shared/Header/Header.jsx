@@ -29,7 +29,7 @@ const Header = () => {
       <div className="navbar bg-transparent text-white lg:w-[1320px] mx-auto py-3">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost md:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -71,7 +71,7 @@ const Header = () => {
             </h4>
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden md:flex">
           <ul className="menu font-bold text-lg menu-horizontal px-1">
             <li>
               <ActiveLink to="/">Home</ActiveLink>

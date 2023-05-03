@@ -10,10 +10,10 @@ const ChefCard = ({ chef }) => {
   const { name, picture, experience, numOfRecipes, likes } = chef;
   return (
     <>
-      <div className="card lg:card-side bg-base-100 shadow-md lg:p-8  p-auto lg:py-auto py-8 lg:px-auto px-5 ">
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-3">
-          <div className="avatar">
-            <div className="w-44 h-44 rounded-full">
+      <div className="card bg-base-100 shadow-lg lg:p-8 p-auto lg:py-auto py-8 lg:px-auto px-5 ">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-3">
+          <div className="avatar flex-grow flex justify-center">
+            <div className="w-48 h-48 rounded-full">
               <img src={picture} alt={`${name}'s Image`} />
             </div>
           </div>
@@ -25,7 +25,7 @@ const ChefCard = ({ chef }) => {
             <p className="font-semibold leading-relaxed text-lg flex items-center gap-2">
               <CgNotes className="text-amber-500" /> {numOfRecipes}+ recipes
             </p>
-            <div className="flex md:flex-row flex-col gap-5">
+            <div className="flex md:flex-row flex-col gap-5 mt-3">
               <div className="card-actions md:justify-end">
                 <button className="btn btn-ghost border-2 bg-transparent border-black normal-case text-base font-bold">
                   <AiFillHeart className="me-2 text-2xl" /> {likes}

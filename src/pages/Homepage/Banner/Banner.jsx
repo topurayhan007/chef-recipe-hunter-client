@@ -4,10 +4,10 @@ import React from "react";
 const Banner = () => {
   return (
     <div>
-      <div className="carousel w-full">
+      <div className="carousel h-[400px] md:h-[470px] lg:h-[750px] w-full">
         <div id="slide1" className="carousel-item relative w-full">
           <div
-            className="hero h-[400px] md:h-[750px] w-full"
+            className="hero w-full"
             style={{
               backgroundImage: `url("assets/banner/banner-1.jpg")`,
             }}
@@ -15,17 +15,17 @@ const Banner = () => {
             <div className="hero-overlay bg-black bg-opacity-50"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-[42rem]">
-                <h1 className="lg:text-7xl md:text-[43px] text-5xl  font-extrabold leading-tight">
+                <h1 className="lg:text-7xl md:text-[43px] text-4xl  font-extrabold leading-tight">
                   Discover the <br />
                   Art of <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fda085] to-yellow-500">
                     Fine Cooking
                   </span>
                 </h1>
-                <p className=" text-base font-medium leading-relaxed py-6">
+                <p className="md:text-base text-sm font-medium leading-relaxed py-6">
                   Enjoy a sensory feast of delicious flavors,
                   <br /> aromas, and textures with our mouth-watering <br />
-                  recipes by the world's top chefs.
+                  Australian recipes by the world's top chefs.
                 </p>
                 <button className="text-base text-black font-bold bg-gradient-to-r from-[#ffc919] to-yellow-500 rounded-lg px-6 py-3">
                   Get Started
@@ -33,7 +33,7 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <div className="absolute flex justify-between transform -translate-y-1/2 md:left-5 md:right-5 left-1 right-1 top-1/2">
             <a href="#slide3" className="btn btn-circle bg-[#001019]">
               ❮
             </a>
@@ -44,7 +44,7 @@ const Banner = () => {
         </div>
         <div id="slide2" className="carousel-item relative w-full">
           <div
-            className="hero h-[400px] md:h-[750px] w-full"
+            className="hero w-full"
             style={{
               backgroundImage: `url("assets/banner/banner-2.jpg")`,
             }}
@@ -52,14 +52,14 @@ const Banner = () => {
             <div className="hero-overlay bg-black bg-opacity-50"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-[42rem]">
-                <h1 className="lg:text-7xl md:text-[43px] text-5xl  font-extrabold leading-tight">
+                <h1 className="lg:text-7xl md:text-[43px] text-4xl font-extrabold leading-tight">
                   Discover the <br />
                   Art of <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fda085] to-yellow-500">
                     Fine Cooking
                   </span>
                 </h1>
-                <p className=" text-base font-medium leading-relaxed py-6">
+                <p className="md:text-base text-sm font-medium leading-relaxed py-6">
                   Enjoy a sensory feast of delicious flavors,
                   <br /> aromas, and textures with our mouth-watering <br />
                   recipes by the world's top chefs.
@@ -70,7 +70,7 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <div className="absolute flex justify-between transform -translate-y-1/2 md:left-5 md:right-5 left-1 right-1 top-1/2">
             <a href="#slide1" className="btn btn-circle bg-[#001019]">
               ❮
             </a>
@@ -81,7 +81,7 @@ const Banner = () => {
         </div>
         <div id="slide3" className="carousel-item relative w-full">
           <div
-            className="hero h-[400px] md:h-[750px] w-full"
+            className="hero w-full"
             style={{
               backgroundImage: `url("assets/banner/banner-3.jpg")`,
             }}
@@ -89,14 +89,14 @@ const Banner = () => {
             <div className="hero-overlay bg-black bg-opacity-50"></div>
             <div className="hero-content text-center text-neutral-content">
               <div className="max-w-[42rem]">
-                <h1 className="lg:text-7xl md:text-[43px] text-5xl  font-extrabold leading-tight">
+                <h1 className="lg:text-7xl md:text-[43px] text-4xl  font-extrabold leading-tight">
                   Discover the <br />
                   Art of <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fda085] to-yellow-500">
                     Fine Cooking
                   </span>
                 </h1>
-                <p className=" text-base font-medium leading-relaxed py-6">
+                <p className="md:text-base text-sm font-medium leading-relaxed py-6">
                   Enjoy a sensory feast of delicious flavors,
                   <br /> aromas, and textures with our mouth-watering <br />
                   recipes by the world's top chefs.
@@ -107,7 +107,7 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+          <div className="absolute flex justify-between transform -translate-y-1/2 md:left-5 md:right-5 left-1 right-1 top-1/2">
             <a href="#slide2" className="btn btn-circle bg-[#001019]">
               ❮
             </a>
