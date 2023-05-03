@@ -59,7 +59,7 @@ const Header = () => {
             </ul>
           </div>
           <Link to="/">
-            <h4 className="cursor-pointer font-bold text-2xl flex items-center font-[Lobster] tracking-wider">
+            <h4 className="cursor-pointer font-bold text-2xl flex items-center font-[Lobster] tracking-wider w-max">
               <span>
                 <img
                   src="assets/icons/logo-1.png"

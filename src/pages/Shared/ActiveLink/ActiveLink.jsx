@@ -9,7 +9,7 @@ const ActiveLink = ({ to, children }) => {
       className={({ isActive }) =>
         isActive
           ? "text-transparent bg-clip-text bg-gradient-to-r from-[#f6D365] to-yellow-500 font-extrabold"
-          : "text-white"
+          : "md:text-white text-black"
       }
     >
       {children}
