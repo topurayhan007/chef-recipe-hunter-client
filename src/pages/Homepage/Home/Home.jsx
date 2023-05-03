@@ -11,8 +11,8 @@ const Home = () => {
       <div className="lg:w-[1320px] mx-auto">
         <FeaturedRecipes></FeaturedRecipes>
         <ChefsContainer></ChefsContainer>
-        <CookingTip></CookingTip>
       </div>
+      <CookingTip></CookingTip>
     </div>
   );
 };
