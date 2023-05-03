@@ -22,7 +22,7 @@ const ChefBanner = () => {
           <h5 className="font-semibold text-lg md:pe-20 leading-relaxed">
             {bio}
           </h5>
-          <div className="bg-base-300 w-1/2 py-5 rounded-full border-2 border-black px-10 flex items-center relative mt-5">
+          <div className="bg-base-300 w-1/2 py-5 rounded-full border-2 ms-4 border-black px-10 flex items-center relative mt-5">
             <div className="absolute -left-5 rounded-full bg-[#ffc919] w-12 h-12">
               <div className="w-12 h-12 items-center flex justify-center">
                 <GiCampCookingPot className="text-xl" />
@@ -32,7 +32,7 @@ const ChefBanner = () => {
               <span className="text-xl">{experience}</span> of experience
             </p>
           </div>
-          <div className="bg-base-300 w-1/2 py-5 rounded-full border-2 border-black px-10 flex items-center relative mt-4">
+          <div className="bg-base-300 w-1/2 py-5 rounded-full border-2 ms-4 border-black px-10 flex items-center relative mt-4">
             <div className="absolute -left-5 rounded-full bg-[#ffc919] w-12 h-12">
               <div className="w-12 h-12 items-center flex justify-center">
                 <FaBook className="text-xl" />
@@ -43,7 +43,7 @@ const ChefBanner = () => {
             </p>
           </div>
 
-          <div className="bg-base-300 w-1/2 py-5 rounded-full border-2 border-black px-10 flex items-center relative mt-4">
+          <div className="bg-base-300 w-1/2 py-5 rounded-full border-2 ms-4 border-black px-10 flex items-center relative mt-4">
             <div className="absolute -left-5 rounded-full bg-[#ffc919] w-12 h-12">
               <div className="w-12 h-12 items-center flex justify-center">
                 <AiFillHeart className="text-xl" />
