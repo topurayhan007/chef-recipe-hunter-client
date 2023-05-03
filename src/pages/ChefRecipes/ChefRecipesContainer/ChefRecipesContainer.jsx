@@ -6,7 +6,9 @@ const ChefRecipesContainer = () => {
   return (
     <div>
       <ChefBanner></ChefBanner>
-      <RecipesContainer></RecipesContainer>
+      <div className="lg:w-[1320px] mx-auto flex justify-center">
+        <RecipesContainer></RecipesContainer>
+      </div>
     </div>
   );
 };

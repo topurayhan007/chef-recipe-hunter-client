@@ -6,6 +6,7 @@ import { GiCook } from "react-icons/gi";
 import { CgNotes } from "react-icons/cg";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
 
 const ChefCard = ({ chef }) => {
   const { id, name, picture, experience, numOfRecipes, likes } = chef;
@@ -15,7 +16,9 @@ const ChefCard = ({ chef }) => {
         <div className="flex flex-col lg:flex-row justify-center items-center gap-3">
           <div className="avatar flex-grow flex justify-center">
             <div className="w-48 h-48 rounded-full">
-              <img src={picture} alt={`${name}'s Image`} />
+              <LazyLoad height={200} offset={10}>
+                <img src={picture} alt={`${name}'s Image`} />
+              </LazyLoad>
             </div>
           </div>
           <div className="card-body">

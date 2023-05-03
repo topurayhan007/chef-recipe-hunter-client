@@ -21,13 +21,10 @@ const ChefsContainer = () => {
   const handleShowAll = () => {
     setFeaturedChefs(chefs);
   };
+
   useEffect(() => {
-    if (!chefs) {
-      return;
-    } else {
-      setLoading(false);
-    }
-  }, [chefs]);
+    setLoading(false);
+  }, [featuredChefs]);
 
   console.log(chefs);
   return (
