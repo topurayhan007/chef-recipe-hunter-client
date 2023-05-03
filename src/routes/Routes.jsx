@@ -8,11 +8,13 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Homepage/Home/Home";
 import RegisterLayout from "../layout/RegisterLayout";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
