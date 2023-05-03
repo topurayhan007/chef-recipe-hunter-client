@@ -62,7 +62,7 @@ const Header = () => {
             <h4 className="cursor-pointer font-bold text-2xl flex items-center font-[Lobster] tracking-wider w-max">
               <span>
                 <img
-                  src="assets/icons/logo-1.png"
+                  src="/assets/icons/logo-1.png"
                   className="w-10 font-bold"
                   alt=""
                 />
@@ -101,7 +101,7 @@ const Header = () => {
                   {user?.photoURL !== null ? (
                     <img src={user.photoURL} />
                   ) : (
-                    <img src="assets/icons/profile-icon.png" />
+                    <img src="/assets/icons/profile-icon.png" />
                   )}
                 </div>
               </label>

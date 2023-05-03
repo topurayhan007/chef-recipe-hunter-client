@@ -5,9 +5,10 @@ import { AiFillHeart } from "react-icons/ai";
 import { GiCook } from "react-icons/gi";
 import { CgNotes } from "react-icons/cg";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const ChefCard = ({ chef }) => {
-  const { name, picture, experience, numOfRecipes, likes } = chef;
+  const { id, name, picture, experience, numOfRecipes, likes } = chef;
   return (
     <>
       <div className="card bg-base-100 shadow-lg lg:p-8 p-auto lg:py-auto py-8 lg:px-auto px-5 ">
@@ -32,9 +33,12 @@ const ChefCard = ({ chef }) => {
                 </button>
               </div>
               <div className="card-actions md:justify-end">
-                <button className="btn bg-[#ffc919] border-0 text-black hover:bg-amber-400 normal-case text-base font-bold">
-                  View Recipes <HiArrowNarrowRight className="ms-1 text-2xl" />
-                </button>
+                <Link to={`/chef-recipes/${id}`}>
+                  <button className="btn bg-[#ffc919] border-0 text-black hover:bg-amber-400 normal-case text-base font-bold">
+                    View Recipes{" "}
+                    <HiArrowNarrowRight className="ms-1 text-2xl" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -9,7 +9,7 @@ const Banner = () => {
           <div
             className="hero w-full"
             style={{
-              backgroundImage: `url("assets/banner/banner-1.jpg")`,
+              backgroundImage: `url("/assets/banner/banner-1.jpg")`,
             }}
           >
             <div className="hero-overlay bg-black bg-opacity-50"></div>
@@ -46,7 +46,7 @@ const Banner = () => {
           <div
             className="hero w-full"
             style={{
-              backgroundImage: `url("assets/banner/banner-2.jpg")`,
+              backgroundImage: `url("/assets/banner/banner-2.jpg")`,
             }}
           >
             <div className="hero-overlay bg-black bg-opacity-50"></div>
@@ -83,7 +83,7 @@ const Banner = () => {
           <div
             className="hero w-full"
             style={{
-              backgroundImage: `url("assets/banner/banner-3.jpg")`,
+              backgroundImage: `url("/assets/banner/banner-3.jpg")`,
             }}
           >
             <div className="hero-overlay bg-black bg-opacity-50"></div>

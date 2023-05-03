@@ -9,6 +9,8 @@ import Home from "../pages/Homepage/Home/Home";
 import RegisterLayout from "../layout/RegisterLayout";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/Shared/ErrorPage/ErrorPage";
+import ChefsContainer from "../pages/Homepage/ChefsContainer/ChefsContainer";
+import ChefRecipesContainer from "../pages/ChefRecipes/ChefRecipesContainer/ChefRecipesContainer";
 
 const router = createBrowserRouter([
   {
@@ -60,8 +62,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: ":id",
-        // element: <Recipes></Recipes>, // protected
-        loader: ({ params }) => fetch(`${params.id}`),
+        element: (
+          <PrivateRoute>
+            <ChefRecipesContainer></ChefRecipesContainer>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://chef-recipe-hunter-server-topurayhan007.vercel.app/chef-recipes/${params.id}`
+          ),
       },
     ],
   },
