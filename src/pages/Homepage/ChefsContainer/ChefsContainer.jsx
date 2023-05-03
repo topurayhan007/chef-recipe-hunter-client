@@ -9,22 +9,24 @@ const ChefsContainer = () => {
   useEffect(() => {
     fetch("https://chef-recipe-hunter-server-topurayhan007.vercel.app/chefs")
       .then((res) => res.json())
-      .then((data) => setChefs(data));
+      .then((data) => {
+        setChefs(data);
+        setLoading(false);
+      });
   }, []);
 
-  const [featuredChefs, setFeaturedChefs] = useState([]);
+  /* const [featuredChefs, setFeaturedChefs] = useState([]);
   useEffect(() => {
     const lessChefs = chefs.slice(0, 4);
     setFeaturedChefs(lessChefs);
   }, [chefs]);
+  useEffect(() => {
+    setLoading(false);
+  }, [featuredChefs]); */
 
   const handleShowAll = () => {
     setFeaturedChefs(chefs);
   };
-
-  useEffect(() => {
-    setLoading(false);
-  }, [featuredChefs]);
 
   console.log(chefs);
   return (
@@ -51,11 +53,11 @@ const ChefsContainer = () => {
         ) : (
           <div>
             <div className="grid md:grid-cols-2 lg:gap-10 gap-8 px-5 md:px-8 lg:px-0 mt-6">
-              {featuredChefs.map((chef) => (
+              {chefs.map((chef) => (
                 <ChefCard key={chef.id} chef={chef}></ChefCard>
               ))}
             </div>
-            <div className="mt-10 flex justify-center">
+            {/* <div className="mt-10 flex justify-center">
               <button
                 onClick={handleShowAll}
                 className={
@@ -66,7 +68,7 @@ const ChefsContainer = () => {
               >
                 Show All
               </button>
-            </div>
+            </div> */}
           </div>
         )}
       </div>

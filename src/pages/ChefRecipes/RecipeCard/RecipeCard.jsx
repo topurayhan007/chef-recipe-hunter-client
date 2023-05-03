@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from "react";
+import React, { useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 import { CgNotes } from "react-icons/cg";
@@ -7,9 +7,12 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import LazyLoad from "react-lazy-load";
 import Rating from "react-rating";
+import { toast } from "react-toastify";
 
 const RecipeCard = ({ recipe }) => {
   const { name, picture, ingredients, cooking_method, rating } = recipe;
+  const [selectedButtonId, setSelectedButtonId] = useState(null);
+
   const methodsArray = [];
   cooking_method
     .split(/[.!?]\s+/)
@@ -26,6 +29,14 @@ const RecipeCard = ({ recipe }) => {
       return method + ".";
     }
   });
+
+  const handleFavorite = (id) => {
+    setSelectedButtonId(id);
+    toast("The recipe is your favorite!", {
+      position: "top-center",
+      type: "success",
+    });
+  };
 
   return (
     <div className="mt-10">
@@ -79,7 +90,13 @@ const RecipeCard = ({ recipe }) => {
               </p>
             </div>
             <div className="card-actions md:justify-start">
-              <button className="btn  bg-[#ffc919] border-0 text-black hover:bg-amber-400 normal-case text-base font-bold">
+              <button
+                onClick={() => handleFavorite(recipe.index)}
+                disabled={
+                  selectedButtonId !== null && selectedButtonId === recipe.index
+                }
+                className="btn  bg-[#ffc919] border-0 text-black hover:bg-amber-400 normal-case text-base font-bold"
+              >
                 <AiFillHeart className="me-2 text-2xl" /> Add to Favorites
               </button>
             </div>

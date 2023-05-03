@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import React, { useState } from "react";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import { useLoaderData } from "react-router-dom";
 
 const RecipesContainer = () => {
   const chef = useLoaderData();
   const recipes = chef.recipes;
-  console.log(recipes);
+  // console.log(recipes);
+
   return (
     <div className="mt-32">
       <h2 className="text-5xl font-bold text-center tracking-wide mb-4">
@@ -17,11 +18,11 @@ const RecipesContainer = () => {
       </div>
 
       <p className="text-center text-lg font-medium mb-5">
-        Handpicked recipes of {chef.name}{" "}
+        Handpicked recipes by {chef.name}{" "}
       </p>
 
-      {recipes.map((recipe) => (
-        <RecipeCard key={recipe.index} recipe={recipe}></RecipeCard>
+      {recipes.map((recipe, index) => (
+        <RecipeCard key={index} recipe={recipe}></RecipeCard>
       ))}
     </div>
   );

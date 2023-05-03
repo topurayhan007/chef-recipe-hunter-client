@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
-  const { createUser, updateUserInfo } = useContext(AuthContext);
+  const { createUser, updateUserInfo, logOut } = useContext(AuthContext);
   const [accepted, setAccepted] = useState(false);
 
   const handleRegister = (event) => {
@@ -37,10 +37,6 @@ const Register = () => {
           .then(() => {
             console.log("Profile Updated!");
             event.target.reset();
-            toast("User created successfully!", {
-              position: "top-center",
-              type: "success",
-            });
           })
           .catch((error2) => {
             console.log(error2.message);
@@ -48,6 +44,16 @@ const Register = () => {
               position: "top-center",
               type: "error",
             });
+          });
+        logOut()
+          .then((result) => {
+            toast("User created successfully!", {
+              position: "top-center",
+              type: "success",
+            });
+          })
+          .catch((error) => {
+            console.log(error.message);
           });
       })
       .catch((error) => {
