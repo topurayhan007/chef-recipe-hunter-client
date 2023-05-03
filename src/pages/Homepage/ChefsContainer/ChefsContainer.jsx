@@ -28,7 +28,7 @@ const ChefsContainer = () => {
     setFeaturedChefs(chefs);
   };
 
-  console.log(chefs);
+  // console.log(chefs);
   return (
     <>
       <div className="mt-20">

@@ -171,10 +171,10 @@ const Register = () => {
 
           <div className="form-control mt-1 ">
             <div className="flex justify-between gap-2">
-              <button className="btn hover:bg-amber-300 bg-transparent border-[#ffc919] border-2 text-black font-bold px-8 normal-case text-base">
+              <button className="btn btn-ghost bg-transparent border-black border-2 text-black font-bold px-8 normal-case text-base">
                 <FaGithub className="me-2" /> Google
               </button>
-              <button className="btn hover:bg-amber-300 bg-transparent border-[#ffc919] border-2 text-black font-bold px-8 normal-case text-base">
+              <button className="btn btn-ghost bg-transparent border-black border-2 text-black font-bold px-8 normal-case text-base">
                 <FaGoogle className="me-2" /> GitHub
               </button>
             </div>
