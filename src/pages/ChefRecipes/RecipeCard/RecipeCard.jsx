@@ -95,9 +95,9 @@ const RecipeCard = ({ recipe }) => {
             </div>
             <div className="card-actions md:justify-start">
               <button
-                onClick={() => handleFavorite(recipe.index)}
+                onClick={() => handleFavorite(recipe.id)}
                 disabled={
-                  selectedButtonId !== null && selectedButtonId === recipe.index
+                  selectedButtonId !== null && selectedButtonId === recipe.id
                 }
                 className="btn  bg-[#ffc919] border-0 text-black hover:bg-amber-400 normal-case text-base font-bold"
               >

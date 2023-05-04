@@ -37,20 +37,18 @@ const Register = () => {
         console.log(createdUser);
 
         // Updates the Name & Profile URL after user is created
-        if (name.length > 2 || photo.length > 2) {
-          updateUserInfo(name, photo)
-            .then(() => {
-              console.log("Profile Updated!");
-              event.target.reset();
-            })
-            .catch((error2) => {
-              console.log(error2.message);
-              toast(error2.message, {
-                position: "top-center",
-                type: "error",
-              });
+        updateUserInfo(name, photo)
+          .then(() => {
+            console.log("Profile Updated!");
+            event.target.reset();
+          })
+          .catch((error2) => {
+            console.log(error2.message);
+            toast(error2.message, {
+              position: "top-center",
+              type: "error",
             });
-        }
+          });
 
         // User automatically logs in after registration,
         // so calling LogOut from user to Login
@@ -92,6 +90,7 @@ const Register = () => {
               <input
                 type="text"
                 name="name"
+                required
                 placeholder="your name"
                 className="input input-bordered border-[1.8px] border-black"
               />
@@ -104,6 +103,7 @@ const Register = () => {
               </label>
               <input
                 type="text"
+                required
                 name="photo"
                 placeholder="your photo url"
                 className="input input-bordered border-[1.8px] border-black"

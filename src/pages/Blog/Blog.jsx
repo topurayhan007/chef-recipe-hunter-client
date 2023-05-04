@@ -2,22 +2,19 @@
 import React from "react";
 import { FaFileDownload } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
-import ReactToPdf from "react-to-pdf";
+import Pdf from "react-to-pdf";
 
 const Blog = () => {
   const ref = React.createRef();
-  const options = {
-    unit: "in",
-    format: [16, 9],
-  };
+
   return (
-    <div ref={ref}>
+    <div ref={ref} className="flex justify-center flex-col">
       <div className="flex flex-col items-center mt-20">
         <h3 className="md:text-5xl lg:text-7xl font-extrabold mb-7">
           Topu's Blog
         </h3>
         <hr className="border-[2.5px] rounded w-56  mb-8 border-[#ffc919] flex justify-center text-center" />
-        <ReactToPdf targetRef={ref} options={options} filename="topu-blog.pdf">
+        <Pdf targetRef={ref} scale={0.55} filename="topu-blog.pdf">
           {({ toPdf }) => (
             <button
               onClick={toPdf}
@@ -26,7 +23,7 @@ const Blog = () => {
               Download PDF <FiDownload className="ms-1 text-2xl" />
             </button>
           )}
-        </ReactToPdf>
+        </Pdf>
       </div>
       <section
         className="mt-20 md:w-10/12 lg:w-[1320px] mx-auto md:text-center text-left"
