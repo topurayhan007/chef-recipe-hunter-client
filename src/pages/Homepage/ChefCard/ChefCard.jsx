@@ -17,7 +17,7 @@ const ChefCard = ({ chef }) => {
         <div className="flex flex-col lg:flex-row justify-center items-center gap-3">
           <div className="avatar flex-grow flex justify-center">
             <div className="w-48 h-48 rounded-full">
-              <LazyLoad height={200} offset={10}>
+              <LazyLoad height={200} offset={10} threshold={0.95}>
                 <img src={picture} alt={`${name}'s Image`} />
               </LazyLoad>
             </div>

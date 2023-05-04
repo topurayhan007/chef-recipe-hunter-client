@@ -59,7 +59,7 @@ const ChefBanner = () => {
         className="flex-1 overflow-hidden order-0 md:order-1 h-[300px] md:h-[400px] lg:h-[650px] w-full"
         style={{ borderRadius: "25% 0 0 60%" }}
       >
-        <LazyLoad height={`100%`} offset={100}>
+        <LazyLoad height={`100%`} offset={100} threshold={0.95}>
           <img
             style={{
               width: "100%",

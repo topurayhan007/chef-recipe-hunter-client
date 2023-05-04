@@ -66,7 +66,7 @@ const RecipeCard = ({ recipe }) => {
           <div className="flex flex-col flex-grow justify-center">
             <div className="card bg-base-100 mask mask-squircle p-3 rounded-xl">
               <div className="w-full md:h-[450px]">
-                <LazyLoad height={`100%`} offset={10}>
+                <LazyLoad height={`100%`} offset={10} threshold={0.95}>
                   <img
                     style={{
                       width: "100%",
