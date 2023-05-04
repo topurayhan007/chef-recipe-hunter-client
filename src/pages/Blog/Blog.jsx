@@ -8,9 +8,9 @@ const Blog = () => {
   const ref = React.createRef();
 
   return (
-    <div ref={ref} className="flex justify-center flex-col">
+    <div className="flex justify-center flex-col">
       <div className="flex flex-col items-center mt-20">
-        <h3 className="md:text-5xl lg:text-7xl font-extrabold mb-7">
+        <h3 className="md:text-5xl text-4xl lg:text-7xl font-extrabold mb-7">
           Topu's Blog
         </h3>
         <hr className="border-[2.5px] rounded w-56  mb-8 border-[#ffc919] flex justify-center text-center" />
@@ -26,6 +26,7 @@ const Blog = () => {
         </Pdf>
       </div>
       <section
+        ref={ref}
         className="mt-20 md:w-10/12 lg:w-[1320px] mx-auto md:text-center text-left"
         id="quesAnsContainer"
       >
