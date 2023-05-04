@@ -6,10 +6,15 @@ import Rating from "react-rating";
 
 const FeaturedRecipeCard = ({ recipe }) => {
   const { name, picture, rating } = recipe;
+
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
       <figure className="flex h-80">
-        <img src={picture} className="h-full w-full object-cover" alt="Shoes" />
+        <img
+          src={picture}
+          className="h-full w-full object-cover"
+          alt="Recipe"
+        />
       </figure>
       <div className="card-body">
         <div className="flex justify-center">

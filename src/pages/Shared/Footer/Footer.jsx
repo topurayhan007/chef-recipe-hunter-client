@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="mt-20">
+    <div className="mt-36">
       <footer className="footer p-10 bg-[#001019] text-base font-bold text-white">
         <div>
           <span className="footer-title text-lg lg:text-xl">Services</span>

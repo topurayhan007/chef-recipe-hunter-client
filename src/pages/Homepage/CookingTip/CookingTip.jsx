@@ -11,7 +11,7 @@ const CookingTip = () => {
   // console.log(tip);
 
   return (
-    <div className="mt-20">
+    <div className="mt-36">
       <h4 className="md:text-3xl text-2xl md:px-0 px-2 font-extrabold text-center mb-5">
         Cooking Tip
       </h4>

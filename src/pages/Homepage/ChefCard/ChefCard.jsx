@@ -10,6 +10,7 @@ import LazyLoad from "react-lazy-load";
 
 const ChefCard = ({ chef }) => {
   const { id, name, picture, experience, numOfRecipes, likes } = chef;
+
   return (
     <>
       <div className="card bg-base-100 shadow-lg lg:p-8 p-auto lg:py-auto py-8 lg:px-auto px-5 ">

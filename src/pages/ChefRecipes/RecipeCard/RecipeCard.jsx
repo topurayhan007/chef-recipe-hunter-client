@@ -11,8 +11,10 @@ import { toast } from "react-toastify";
 
 const RecipeCard = ({ recipe }) => {
   const { name, picture, ingredients, cooking_method, rating } = recipe;
+  // state for Favorite button
   const [selectedButtonId, setSelectedButtonId] = useState(null);
 
+  // Cooking Method paragraph is split into sentences
   const methodsArray = [];
   cooking_method
     .split(/[.!?]\s+/)
@@ -22,6 +24,7 @@ const RecipeCard = ({ recipe }) => {
     });
   // console.log(methodsArray, cooking_method);
 
+  // Fullstop is added at the end of each sentence
   const methods = methodsArray.map((method, index) => {
     if (index === methodsArray.length - 1) {
       return method;
@@ -30,6 +33,7 @@ const RecipeCard = ({ recipe }) => {
     }
   });
 
+  // Handles Favorite Button function
   const handleFavorite = (id) => {
     setSelectedButtonId(id);
     toast("The recipe is your favorite!", {

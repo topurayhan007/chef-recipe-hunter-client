@@ -112,11 +112,11 @@ const Header = () => {
                   showName ? "absolute z-50 right-0" : "hidden"
                 }  text-black bg-base-100 rounded-box w-52`}
               >
-                <li onClick={() => setShowName(false)}>
-                  <a className="justify-between">
-                    {user?.displayName !== null ? user?.displayName : "Name"}
-                  </a>
-                </li>
+                {user?.displayName && (
+                  <li onClick={() => setShowName(false)}>
+                    <a className="justify-between">{user.displayName}</a>
+                  </li>
+                )}
                 <li onClick={handleLogOut} className="text-red-600">
                   <a>Logout</a>
                 </li>

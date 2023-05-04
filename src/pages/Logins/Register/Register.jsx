@@ -11,6 +11,7 @@ const Register = () => {
   const { createUser, updateUserInfo, logOut } = useContext(AuthContext);
   const [accepted, setAccepted] = useState(false);
 
+  // Registration function
   const handleRegister = (event) => {
     event.preventDefault();
 
@@ -29,22 +30,30 @@ const Register = () => {
       return;
     }
 
+    // Firebase registration function
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
-        updateUserInfo(name, photo)
-          .then(() => {
-            console.log("Profile Updated!");
-            event.target.reset();
-          })
-          .catch((error2) => {
-            console.log(error2.message);
-            toast(error2.message, {
-              position: "top-center",
-              type: "error",
+
+        // Updates the Name & Profile URL after user is created
+        if (name.length > 2 && photo.length > 2) {
+          updateUserInfo(name, photo)
+            .then(() => {
+              console.log("Profile Updated!");
+              event.target.reset();
+            })
+            .catch((error2) => {
+              console.log(error2.message);
+              toast(error2.message, {
+                position: "top-center",
+                type: "error",
+              });
             });
-          });
+        }
+
+        // User automatically logs in after registration,
+        // so calling LogOut from user to Login
         logOut()
           .then((result) => {
             toast("User created successfully!", {
@@ -65,11 +74,13 @@ const Register = () => {
       });
   };
 
+  // Register button is not disable after accepting Terms and Conditions
   const handleAccepted = (event) => {
     setAccepted(event.target.checked);
   };
+
   return (
-    <div className="mt-10 pb-10">
+    <div className="mt-10 pb-10  px-3 md:px-0">
       <div className="card flex-shrink-0 w-full max-w-sm mx-auto  shadow-2xl bg-base-100">
         <div className="card-body">
           <form onSubmit={handleRegister}>

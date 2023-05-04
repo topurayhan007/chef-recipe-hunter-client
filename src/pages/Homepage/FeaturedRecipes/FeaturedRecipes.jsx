@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import FeaturedRecipeCard from "../FeaturedRecipeCard/FeaturedRecipeCard";
 
 const FeaturedRecipes = () => {
+  // Featured recipes data load here
   const [featuredRecipes, setFeaturedRecipes] = useState([]);
   useEffect(() => {
     fetch(
@@ -12,7 +13,7 @@ const FeaturedRecipes = () => {
   }, []);
 
   return (
-    <div className="mt-20 flex flex-col justify-center items-center text-center">
+    <div className="mt-36 flex flex-col justify-center items-center text-center">
       <h4 className="md:text-3xl text-2xl md:px-0 px-2 font-extrabold text-center mb-5">
         Featured Recipes
       </h4>
