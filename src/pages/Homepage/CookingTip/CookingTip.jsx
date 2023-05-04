@@ -31,7 +31,7 @@ const CookingTip = () => {
         <div className="hero-overlay bg-black bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-2xl">
-            <div className="bg-base-300 backdrop-blur-sm bg-white/30 text-white card md:p-5 lg:p-10 h-80 flex justify-center items-center">
+            <div className="bg-base-300 backdrop-blur-sm bg-white/30 text-white card p-4 md:p-5 lg:p-10 h-80 flex justify-center items-center">
               <div>
                 <h1 className="mb-5 text-xl md:text-3xl font-bold">
                   {tip.tip}
