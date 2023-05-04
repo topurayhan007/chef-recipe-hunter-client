@@ -1,12 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import { useLoaderData } from "react-router-dom";
 
 const RecipesContainer = () => {
+  const [loading, setLoading] = useState(true);
+
   const chef = useLoaderData();
   const recipes = chef.recipes;
   // console.log(recipes);
+
+  useEffect(() => {
+    if (chef !== null) {
+      setLoading(false);
+    }
+  }, [chef]);
 
   return (
     <div className="mt-32">
@@ -20,10 +28,20 @@ const RecipesContainer = () => {
       <p className="text-center text-lg font-medium mb-5">
         Handpicked recipes by {chef.name}{" "}
       </p>
-
-      {recipes.map((recipe, index) => (
-        <RecipeCard key={index} recipe={recipe}></RecipeCard>
-      ))}
+      {loading ? (
+        <div className="flex justify-center items-center">
+          <div
+            className="radial-progress text-warning animate-spin"
+            style={{ "--value": 70 }}
+          ></div>
+        </div>
+      ) : (
+        <>
+          {recipes.map((recipe, index) => (
+            <RecipeCard key={index} recipe={recipe}></RecipeCard>
+          ))}
+        </>
+      )}
     </div>
   );
 };
