@@ -37,7 +37,7 @@ const Register = () => {
         console.log(createdUser);
 
         // Updates the Name & Profile URL after user is created
-        if (name.length > 2 && photo.length > 2) {
+        if (name.length > 2 || photo.length > 2) {
           updateUserInfo(name, photo)
             .then(() => {
               console.log("Profile Updated!");
@@ -81,7 +81,7 @@ const Register = () => {
 
   return (
     <div className="mt-10 pb-10  px-3 md:px-0">
-      <div className="card flex-shrink-0 w-full max-w-sm mx-auto  shadow-2xl bg-base-100">
+      <div className="card flex-shrink-0 w-full max-w-sm mx-auto mt-16 shadow-2xl bg-base-100">
         <div className="card-body">
           <form onSubmit={handleRegister}>
             <p className="text-3xl font-bold text-center">Sign Up</p>
@@ -92,7 +92,6 @@ const Register = () => {
               <input
                 type="text"
                 name="name"
-                required
                 placeholder="your name"
                 className="input input-bordered border-[1.8px] border-black"
               />
@@ -106,7 +105,6 @@ const Register = () => {
               <input
                 type="text"
                 name="photo"
-                required
                 placeholder="your photo url"
                 className="input input-bordered border-[1.8px] border-black"
               />

@@ -97,7 +97,7 @@ const Header = () => {
                 onClick={() => setShowName(!showName)}
                 className="btn btn-ghost btn-circle avatar"
               >
-                <div className="w-10 rounded-full">
+                <div className="w-12 rounded-full">
                   {user?.photoURL !== null ? (
                     <img src={user.photoURL} />
                   ) : (
